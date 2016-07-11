@@ -10,7 +10,7 @@ source  => [
 # from modules/smartd/files/smartd.conf
 "puppet:///modules/sshd/sshd.conf",
 ],
-mode    => 444,
+mode    => 644,
 owner   => root,
 group   => root,
 }
