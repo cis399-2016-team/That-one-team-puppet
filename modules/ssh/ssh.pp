@@ -18,7 +18,8 @@ class sshd {
 
     ssh_authorized_key { "mike_key":
         user => "ubuntu",
-        key => "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDI8Mib9mG3LPmJ+faU6RBnv62pyaWkyHo7qwUnOtuAsKUafy4KhgfNGt1GtA+iuinolK2tGCCPhq4AHoi/uYz35trdDP5BmfSqcDOXf/og6D9AM8Pp/SvrJtab+mKixW25Xzes2r5DTDdne9t4akEdrFu0TX84v+JkoW9k1vffXxwx3d4z22vLoZFkelhGBwdU3QxP5OLBOJLUArSq9xPZ9KC1haFSMgGeUozfg0669EZ8huWKGoR9nyUOo4mFm0M84skDaNOqrEbndWMUXMdotOpigiaU235AcVyygHMMD0WUEQkYK2U9CD+fsnbQYz+GMyEhrvj4WoZhkSjLnJgh mike@mike-arch"
+        key => "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDW6KxhZQURLzasQlBObJxCMYmAZgezXPC0buM3e5h2GaTdpOAGAgHM4CVqUnNjIEEQX0lWAOju+JLQma4QzFaCUNcTJXvnrTK+XqDr3GkdhrQdGKWcS/1BHN1mrHwGymOmL7TiVJyhDRd/dhAEkOH3nukGOkErVJmsnc30PnlOtYReEZYGkzFNW9mNBoQJupU/1huiIBLjXDlVUaqDn5CQ03WFiHaK1O6V+Pg+AJ8rNXhFesF/Mlmvpal3G1yqREDHFvr4skQdBrpIxFXhDCi2s1M7kghKtlueYqFe4EmTVZ8r5C50NZiqoRVpEUXxTKOqQodL/UaR0aWo9U2QqWJx panda
+"
     }
 
 }
