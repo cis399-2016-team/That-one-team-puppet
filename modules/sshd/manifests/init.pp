@@ -6,7 +6,7 @@ package {
 file { "/etc/ssh/sshd_config":
 source  => [
 # from modules/smartd/files/$hostname/smartd.conf
-"puppet:///modules/sshd/$hostname/sshd.conf",
+#"puppet:///modules/sshd/$hostname/sshd.conf",
 # from modules/smartd/files/smartd.conf
 "puppet:///modules/sshd/sshd.conf",
 ],
