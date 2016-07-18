@@ -21,7 +21,7 @@ class apache {
         hasrestart => true,
     }
 
-    file { "/var/www/html"
+    file { "/var/www/html":
         source  => ["puppet:///modules/apache/html"],
         mode    => 755,
         recurse => true,
