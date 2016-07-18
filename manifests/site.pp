@@ -15,5 +15,6 @@ node ip-10-0-5-182 {
 }
 
 node ip-10-0-5-251 {
-    include "sshd"
+    include "sshd",
+    include "apache"
 }
