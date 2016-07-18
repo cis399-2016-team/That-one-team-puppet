@@ -1,4 +1,0 @@
-class apache::params {
-
-
-}
