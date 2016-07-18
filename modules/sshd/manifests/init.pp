@@ -5,9 +5,9 @@ package {
 
 file { "/etc/ssh/sshd_config":
 source  => [
-# from modules/smartd/files/$hostname/smartd.conf
+# from modules/sshd/files/$hostname/sshd.conf
 #"puppet:///modules/sshd/$hostname/sshd.conf",
-# from modules/smartd/files/smartd.conf
+# from modules/sshd/files/sshd.conf
 "puppet:///modules/sshd/sshd.conf",
 ],
 mode    => 644,
@@ -20,9 +20,9 @@ service { "sshd":
 enable     => true,
 # restart service if it is not running
 ensure     => running,
-# "service smartd status" returns useful service status info
+# "service sshd status" returns useful service status info
 hasstatus  => true,
-# "service smartd restart" can restart service
+# "service sshd restart" can restart service
 hasrestart => true,
 # package and configuration must be present for service
 require    => [ Package["openssh-server"],
