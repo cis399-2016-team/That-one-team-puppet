@@ -5,7 +5,7 @@ class apache {
     } elsif $::osfamily == 'Ubuntu' {
         $apachepkg = 'apache2'
     } else {
-        print "Apache is not supported on this distro."
+        notify {"Apache is not supported on this distro.":}
     }
 
     package { 'apache':
