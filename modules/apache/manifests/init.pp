@@ -2,7 +2,7 @@ class apache {
 
     notify {"Your os family is $::operatingsystem":}
 
-    if $::osfamily == 'RedHat' {
+    if $::operatingsystem == 'Amazon' || $::operatingsystem == 'RedHat' {
         $apachepkg = 'httpd'
     } elsif $::osfamily == 'Ubuntu' {
         $apachepkg = 'apache2'
