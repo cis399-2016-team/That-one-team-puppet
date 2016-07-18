@@ -15,10 +15,10 @@ class apache {
 
     service { 'apache':
         name   => $apachepkg,
-        enable => true;
-        ensure => running;
-        hasstatus => true;
-        hasrestart => true;
+        enable => true,
+        ensure => running,
+        hasstatus => true,
+        hasrestart => true,
     }
 
 }
