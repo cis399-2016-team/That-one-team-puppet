@@ -1,6 +1,6 @@
 class apache {
 
-    notify {"Your os family is $::osfamily":}
+    notify {"Your os family is $::operatingsystem":}
 
     if $::osfamily == 'RedHat' {
         $apachepkg = 'httpd'
