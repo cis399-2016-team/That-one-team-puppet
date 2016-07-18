@@ -23,10 +23,8 @@ class apache {
 
     file { "/var/www/html":
         source  => ["puppet:///modules/apache/html"],
-        mode    => 755,
+        mode    => 644,
         recurse => true,
-
     }
-
 }
 
