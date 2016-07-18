@@ -2,9 +2,9 @@ class apache {
 
     notify {"Your os family is $::operatingsystem":}
 
-    if $::operatingsystem == 'Amazon' || $::operatingsystem == 'RedHat' {
+    if $::operatingsystem == 'Amazon' or $::operatingsystem == 'RedHat' {
         $apachepkg = 'httpd'
-    } elsif $::osfamily == 'Ubuntu' {
+    } elsif $::operatingsystem == 'Ubuntu' {
         $apachepkg = 'apache2'
     } else {
         notify {"Apache is not supported on this distro.":}
