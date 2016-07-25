@@ -1,0 +1,37 @@
+#!/bin/bash
+
+out="users.part"
+
+declare -i line_idx=0;
+declare -i uid=1001;
+
+rm -rf $out;
+
+echo "Input user name"
+while read line
+do
+    declare -i func=$line_idx%3;
+
+    case $func in
+        0)
+            printf "useradd { \"$line\": \n\tname => \"$line\", \n\tuid => $uid,\n\t" >> $out;
+
+            uid=$uid+1;
+            echo "Input user key name";
+            ;;
+        1)
+            printf "ssh_key_name => \"$line\",\n\t" >> $out;
+
+            echo "Input user key";
+            ;;
+        2)
+            printf "ssh_key => \"$line\"\n}\n" >> $out;
+
+            echo "Input user name"
+            ;;
+    esac
+
+    line_idx=$line_idx+1;
+done
+
+cat header.part $out > init.pp
