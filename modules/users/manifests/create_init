@@ -7,7 +7,19 @@ declare -i uid=1001;
 
 rm -rf $out;
 
-echo "Input user name"
+printf "Reading data from input, FORMAT: \n\
+Line 1: User name \n\
+Line 2: User Key name \n\
+Line 3: User ssh key \n\
+\n\
+example: \n\
+\n\
+eewing \n\
+eeewing@WINDOWS-10 \n\
+AAAABdkh ... 3j2 \n\
+\n\
+Repeat those three lines for each user\n";
+
 while read line
 do
     declare -i func=$line_idx%3;
@@ -17,21 +29,20 @@ do
             printf "useradd { \"$line\": \n\tname => \"$line\", \n\tuid => $uid,\n\t" >> $out;
 
             uid=$uid+1;
-            echo "Input user key name";
             ;;
         1)
             printf "ssh_key_name => \"$line\",\n\t" >> $out;
 
-            echo "Input user key";
             ;;
         2)
             printf "ssh_key => \"$line\"\n}\n" >> $out;
 
-            echo "Input user name"
             ;;
     esac
 
     line_idx=$line_idx+1;
 done
 
-cat header.part $out > init.pp
+cat header.part $out tail.part > init.pp
+
+echo "Done reading lines. init.pp created."
