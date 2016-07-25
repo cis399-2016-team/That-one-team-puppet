@@ -61,10 +61,10 @@ group   => root,
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDI8Mib9mG3LPmJ+faU6RBnv62pyaWkyHo7qwUnOtuAsKUafy4KhgfNGt1GtA+iuinolK2tGCCPhq4AHoi/uYz35trdDP5BmfSqcDOXf/og6D9AM8Pp/SvrJtab+mKixW25Xzes2r5DTDdne9t4akEdrFu0TX84v+JkoW9k1vffXxwx3d4z22vLoZFkelhGBwdU3QxP5OLBOJLUArSq9xPZ9KC1haFSMgGeUozfg0669EZ8huWKGoR9nyUOo4mFm0M84skDaNOqrEbndWMUXMdotOpigiaU235AcVyygHMMD0WUEQkYK2U9CD+fsnbQYz+GMyEhrvj4WoZhkSjLnJgh"
     }
 
-    ssh_authorized_key { "Quent@DESKTOP-ER46L4L":
+    ssh_authorized_key { "Quent@DESKTOP-VLHI5BD":
         user => $username,
         type => "ssh-rsa",
-        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCjLSZjv6S8XRccQVhYeIBQaioPCk0yDnawtpjm5H85bFTBBEBLbAf984ROzg/f7L0eUN5cowON1N+qJHCoAYm7PGxctMjpqnjzWmX49TgnT1c3dt8iGbee/dQZx5FxD3fIYqGjrlDvLFG9PrnpYv3t3UitWGHQkns40UZr98kova0u8ugi31NHvs54K/AYNbmu586OYTlbBuFUtJJoiCcfa1FeAjhXSTpRyCWkZfMLRO7sxKecHaChpdysZkyscpW8v6wjj7iZYmmyJdIPUD27kZMfT5+Nl/3rYZbG3M4Pili2I+px8EYZpK5RQjcCLNULtLsutz0wk7ac009SGJ4r"
+        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQC3AaBSn+a5j9R7XS2VlyKiaptQaWyeJdgq71wTA8PUNtzzrE6Djv955CQvbjurLKEXPBjrzQdyiotqPfgMD8hBBcBUuT04edDf/ccgaYPYU77S+utGE4vwUdb3YNuUTJFErCnR4FVW2sXGlF6LIMb6crPVC4WHvzsXrKuuRBwo9SJT1VpjZ1IKaVRzcMncspr+ZLP7maq3e8U4GLas3owD0qnrxB3tmC1l4fJ0wOyv9TDWCHYY1iMs0+XPPQa2vCUPGf1qL/yWJo+6L77K+n6J7D09ovaWYxP8DFYYo7PvxraOK1xoQV9Ysm4NKHa0awDO2oqVy7wvan8CTCd46gaT"
     }
 
 }
