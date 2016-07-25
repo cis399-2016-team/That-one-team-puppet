@@ -1,4 +1,4 @@
-define useradd($name, $uid, $ssh_key_type, $ssh_key) {
+define useradd($name, $uid, $ssh_key_name, $ssh_key) {
 
     user { "$name":
         home       => "/home/$name",
