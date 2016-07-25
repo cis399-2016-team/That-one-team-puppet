@@ -45,4 +45,7 @@ done
 
 cat header.part $out tail.part > init.pp
 
+declare -i num_users=$line_idx/3;
+
 echo "Done reading lines. init.pp created."
+echo "Configured to create $num_users users."
