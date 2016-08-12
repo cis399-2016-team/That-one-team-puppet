@@ -16,6 +16,6 @@ class quake {
         user => quake,
         ensure => present,
         type => "ssh-rsa",
-        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDXTTAit5pDTb2DYmAa81ANHbQAN+STtwOXoNYChXsterU9YC4DMLUQDwuozYnDp6oFxYRcgfuZQAvn7mSjOXhlcW3Snh/poLThc3aO/71GGtlWlK9nZaQ60wsIk3bLyc6GWs4Igixu+t4v5p/GOxg1hFx3TwZ13Oc/8vjLQAoPSqQu6NQgv2RVwSfyHR0iWuVeolsIPrBI5xqAZUVtLJm8aVPBaI6FHG/1VCQGVtmOnwUsRcJkVA9GVZxOQi3nuESe5AgMD50exQODQEUo/QXdfxGHP+naC2CHqXr+7yJfYjFSaAGSR2uHd++yPbfkPy3DnPrQFmWIqX5tiootZU25 Quentillionaire@FINN"
+        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDXTTAit5pDTb2DYmAa81ANHbQAN+STtwOXoNYChXsterU9YC4DMLUQDwuozYnDp6oFxYRcgfuZQAvn7mSjOXhlcW3Snh/poLThc3aO/71GGtlWlK9nZaQ60wsIk3bLyc6GWs4Igixu+t4v5p/GOxg1hFx3TwZ13Oc/8vjLQAoPSqQu6NQgv2RVwSfyHR0iWuVeolsIPrBI5xqAZUVtLJm8aVPBaI6FHG/1VCQGVtmOnwUsRcJkVA9GVZxOQi3nuESe5AgMD50exQODQEUo/QXdfxGHP+naC2CHqXr+7yJfYjFSaAGSR2uHd++yPbfkPy3DnPrQFmWIqX5tiootZU25"
     }
 }
