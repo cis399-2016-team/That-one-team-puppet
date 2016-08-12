@@ -36,17 +36,8 @@ class quake {
     exec { 'compile_server':
         command => '/home/quake/quake_install/install_server.sh',
         creates => '/home/quake/ioquake3',
-        before  => Exec['install_mods'],
         user    => "root",
         require => Package['make', 'gcc'],
-    }
-
-    exec { 'install_mods':
-        command => '/home/quake/quake_install/install_mods.sh',
-        creates => '/home/quake/quake_install/qf3_220_full.zip',
-        before  => Exec['start_server'],
-        user    => "quake",
-        require => Package['unzip'],
     }
 
     exec { 'start_server':
