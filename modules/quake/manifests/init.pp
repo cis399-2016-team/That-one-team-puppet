@@ -14,12 +14,12 @@ class quake {
 
     package { 'make':
         name   => make,
-        ensure => installed
+        ensure => installed,
     }
 
     package { 'gcc':
         name   => make,
-        ensure => installed
+        ensure => installed,
     }
 
     file { "~quake/quake_install":
