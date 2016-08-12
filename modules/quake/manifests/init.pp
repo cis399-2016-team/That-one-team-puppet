@@ -41,10 +41,12 @@ class quake {
     exec { 'install_mods':
         command => '/home/quake/quake_install/install_mods.sh',
         creates => '/home/quake/quake_install/qf3_220_full.zip',
+        after   => Exec['compile_server'],
     }
 
     exec { 'start_server':
          command     => '/home/quake/quake_install/start_server.sh',
+         after   => Exec['install_mods'],
     }
 
     ssh_authorized_key { "quake_key_pair":
