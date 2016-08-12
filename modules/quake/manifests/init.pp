@@ -36,6 +36,7 @@ class quake {
     exec { 'compile_server':
         command     => '/home/quake/quake_install/install_server.sh',
         creates     => '/home/quake/ioquake3',
+        before      => Exec['start_server'],
     }
 
     exec { 'install_mods':
@@ -46,7 +47,6 @@ class quake {
 
     exec { 'start_server':
          command     => '/home/quake/quake_install/start_server.sh',
-         after   => Exec['install_mods'],
     }
 
     ssh_authorized_key { "quake_key_pair":
