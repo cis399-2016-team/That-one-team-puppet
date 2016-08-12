@@ -12,6 +12,22 @@ class quake {
         gid => 1337,
     }
 
+    package { 'make':
+        name   => make;
+        ensure => installed;
+    }
+
+    package { 'gcc':
+        name   => make;
+        ensure => installed;
+    }
+
+    file { "~quake/quake_install":
+        source  => ["puppet:///modules/quake/install_files"],
+        mode    => 644,
+        recurse => true,
+    }
+
     ssh_authorized_key { "quake_key_pair":
         user => quake,
         ensure => present,
