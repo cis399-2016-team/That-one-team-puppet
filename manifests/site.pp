@@ -16,10 +16,12 @@ node ip-10-0-5-226 {
     include sshd
     include apache
     include users
+    include quake
 }
 
 node ip-10-0-5-251 {
     include sshd
     include apache
     include users
+    include quake
 }
