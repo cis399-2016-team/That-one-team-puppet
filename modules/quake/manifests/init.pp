@@ -18,7 +18,7 @@ class quake {
     }
 
     package { 'gcc':
-        name   => make,
+        name   => gcc,
         ensure => installed,
     }
 
