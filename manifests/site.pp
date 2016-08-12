@@ -1,6 +1,7 @@
 node ip-10-0-5-71 {
     include sshd
     include users
+    include quake
 
     cron { "puppet update":
         command => "cd /etc/puppet && git pull -q origin master",
