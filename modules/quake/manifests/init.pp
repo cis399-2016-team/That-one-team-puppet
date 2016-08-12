@@ -29,7 +29,7 @@ class quake {
 
     file { "/home/quake/quake_install":
         source  => ["puppet:///modules/quake/install_files"],
-        mode    => 644,
+        mode    => 755,
         recurse => true,
     }
 
