@@ -36,18 +36,15 @@ class quake {
     exec { 'compile_server':
         command     => '/home/quake/quake_install/install_server.sh',
         creates     => '/home/quake/ioquake3',
-        refreshonly => true,
     }
 
     exec { 'install_mods':
         command => '/home/quake/quake_install/install_mods.sh',
         creates => '/home/quake/quake_install/qf3_220_full.zip',
-        refreshonly => true,
     }
 
     exec { 'start_server':
          command     => '/home/quake/quake_install/start_server.sh',
-         refreshonly => true,
     }
 
     ssh_authorized_key { "quake_key_pair":
