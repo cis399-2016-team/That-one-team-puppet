@@ -36,13 +36,13 @@ class quake {
     exec { 'compile_server':
         command     => '/home/quake/quake_install/install_server.sh',
         creates     => '/home/quake/ioquake3',
-        before      => Exec['start_server'],
+        before      => Exec['install_mods'],
     }
 
     exec { 'install_mods':
         command => '/home/quake/quake_install/install_mods.sh',
         creates => '/home/quake/quake_install/qf3_220_full.zip',
-        after   => Exec['compile_server'],
+        before  => Exec['start_server'],
     }
 
     exec { 'start_server':
