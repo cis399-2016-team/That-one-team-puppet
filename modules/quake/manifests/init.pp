@@ -40,6 +40,7 @@ class quake {
         require => Package['make', 'gcc'],
     }
 
+
     exec { 'start_server':
         command     => '/home/quake/quake_install/start_server.sh',
         user        => "quake",
