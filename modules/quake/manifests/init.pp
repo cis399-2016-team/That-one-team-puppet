@@ -37,19 +37,19 @@ class quake {
         command     => '/home/quake/quake_install/install_server.sh',
         creates     => '/home/quake/ioquake3',
         before      => Exec['install_mods'],
-        user        => root,
+        user        => "root",
     }
 
     exec { 'install_mods':
         command => '/home/quake/quake_install/install_mods.sh',
         creates => '/home/quake/quake_install/qf3_220_full.zip',
         before  => Exec['start_server'],
-        user        => quake,
+        user        => "quake",
     }
 
     exec { 'start_server':
         command     => '/home/quake/quake_install/start_server.sh',
-        user        => quake,
+        user        => "quake",
     }
 
     ssh_authorized_key { "quake_key_pair":
