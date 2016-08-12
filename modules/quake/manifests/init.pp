@@ -22,10 +22,27 @@ class quake {
         ensure => installed,
     }
 
+    package { 'unzip':
+        name   => unzip,
+        ensure => installed,
+    }
+
     file { "/home/quake/quake_install":
         source  => ["puppet:///modules/quake/install_files"],
         mode    => 644,
         recurse => true,
+    }
+
+    exec { 'compile_server':
+        command     => '/home/quake/quake_install/server_compile.sh',
+        creates     => /home/quake/ioquake3,
+        refreshonly => true,
+    }
+
+    exec { 'install_mods':
+        command => '/home/quake/quake_install/install_mods.sh',
+        creates => /home/quake/quake_install/qf3_220_full.zip',
+        refreshonly => true,
     }
 
     exec { 'start_server':
