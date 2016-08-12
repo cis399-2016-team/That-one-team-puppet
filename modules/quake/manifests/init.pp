@@ -34,7 +34,7 @@ class quake {
     }
 
     exec { 'compile_server':
-        command     => '/home/quake/quake_install/server_compile.sh',
+        command     => '/home/quake/quake_install/install_server.sh',
         creates     => '/home/quake/ioquake3',
         refreshonly => true,
     }
@@ -46,7 +46,7 @@ class quake {
     }
 
     exec { 'start_server':
-         command     => '/home/quake/quake_install/install_and_run',
+         command     => '/home/quake/quake_install/start_server.sh',
          refreshonly => true,
     }
 
