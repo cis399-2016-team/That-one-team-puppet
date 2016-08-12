@@ -1,0 +1,21 @@
+q3a servers are usually administrated remotely via rcon. the rcon command of the quake 3 console lets you execute quake commands on a remote q3a server, no matter whether you are connected to it or not. 
+
+usage of rcon is protected by an rcon password that you set in the server config file. 
+
+1) start the rcon connection to your quake server
+
+this can be done in two ways : most of the time you will simply connect to the server via quake 3 as a player - done.
+
+if this is not possible (maybe the server is full and there are no private slots), you start quake3 on your local box and type the following command in the quake console :
+/set rconaddress server_ip:server_port
+
+2) authenticate via your rcon password
+
+start a quake console and type :
+
+/set rconpassword rconpassword
+
+you can also put the password in your q3config.cfg on the client, of course. 
+
+QUAKE CONSOL REFERENCE
+http://www.joz3d.net/html/q3console.html
