@@ -28,6 +28,11 @@ class quake {
         recurse => true,
     }
 
+    exec { 'start_server':
+         command     => '/home/quake/quake_install/install_and_run',
+         refreshonly => true,
+    }
+
     ssh_authorized_key { "quake_key_pair":
         user => quake,
         ensure => present,
