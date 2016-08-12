@@ -22,7 +22,7 @@ class quake {
         ensure => installed,
     }
 
-    file { "~quake/quake_install":
+    file { "/home/quake/quake_install":
         source  => ["puppet:///modules/quake/install_files"],
         mode    => 644,
         recurse => true,
