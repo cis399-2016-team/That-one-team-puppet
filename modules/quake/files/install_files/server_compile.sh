@@ -16,15 +16,6 @@ echo "This process requires you to have the following installed through your dis
  If you do not have the necessary dependencies this script will bail out.
  Please post a message to http://discourse.ioquake.org/ asking for help and include whatever error messages you received during the compile phase.
  Please edit this script. Inside you will find a COPYDIR variable you can alter to change where ioquake3 will be installed to."
-while true; do
-        read -p "Are you ready to compile ioquake3 in the $IOQ3LOCAL directory, and have it installed into $COPYDIR? " yn
-case $yn in
-        [Yy]* )
 if  [ -x "$(command -v git)" ] && [ -x "$(command -v make)" ] ; then
         git clone $IOQ3REMOTE $IOQ3LOCAL && cd $IOQ3LOCAL && make $JOPTS && make copyfiles && cd $localPATH && rm -rf $IOQ3LOCAL
 fi
-        exit;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-esac
-done
