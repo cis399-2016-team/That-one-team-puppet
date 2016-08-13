@@ -31,6 +31,7 @@ class quake {
         source  => ["puppet:///modules/quake/install_files"],
         mode    => 755,
         recurse => true,
+        user    => quake,
     }
 
     exec { 'compile_server':
