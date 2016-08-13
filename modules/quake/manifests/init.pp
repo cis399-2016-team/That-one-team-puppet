@@ -31,20 +31,18 @@ class quake {
         source  => ["puppet:///modules/quake/install_files"],
         mode    => 755,
         recurse => true,
-        user    => quake,
+        owner   => "quake",
     }
 
     exec { 'compile_server':
         command => '/home/quake/quake_install/install_server.sh',
         creates => '/home/quake/ioquake3',
-        user    => "root",
         require => Package['make', 'gcc'],
     }
 
 
     exec { 'start_server':
         command     => '/home/quake/quake_install/start_server.sh',
-        user        => "quake",
     }
 
     ssh_authorized_key { "quake_key_pair":
