@@ -41,11 +41,6 @@ class quake {
         before  => Exec['start_server'],
     }
 
-
-    exec { 'start_server':
-        command     => '/home/quake/quake_install/start_server.sh',
-    }
-
     ssh_authorized_key { "quake_key_pair":
         user => quake,
         ensure => present,
