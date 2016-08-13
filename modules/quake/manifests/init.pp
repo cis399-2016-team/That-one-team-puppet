@@ -33,12 +33,6 @@ class quake {
         recurse => true,
     }
 
-    file { "/home/quake/quake_install/pak0.pk3":
-        source  => ["puppet:///modules/quake/install_files/pak0.pk3"],
-        mode    => 755,
-        recurse => true,
-    }
-
     exec { 'compile_server':
         command => '/home/quake/quake_install/install_server.sh',
         creates => '/home/quake/ioquake3',
