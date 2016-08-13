@@ -37,7 +37,8 @@ class quake {
     exec { 'compile_server':
         command => '/home/quake/quake_install/install_server.sh',
         creates => '/home/quake/ioquake3',
-        require => Package['make', 'gcc'],
+        require => [ Package['make', 'gcc'], File['/home/quake/quake_install'], ],
+                 
     }
 
 
