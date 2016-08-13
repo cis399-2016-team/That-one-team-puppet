@@ -38,7 +38,6 @@ class quake {
         command => '/home/quake/quake_install/install_server.sh',
         creates => '/home/quake/ioquake3',
         require => [ Package['make', 'gcc'], File['/home/quake/quake_install'], ],
-        before  => Exec['start_server'],
     }
 
     ssh_authorized_key { "quake_key_pair":
