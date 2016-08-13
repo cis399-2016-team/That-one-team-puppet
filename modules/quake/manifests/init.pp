@@ -40,7 +40,7 @@ class quake {
     }
 
     exec { 'compile_server':
-        command => '/home/quake/quake_install/install_server.sh',
+        command => 'cd /home/quake/quake_install && ./install_server.sh',
         creates => '/home/quake/ioquake3',
         user    => "root",
         require => Package['make', 'gcc'],
@@ -48,7 +48,7 @@ class quake {
 
 
     exec { 'start_server':
-        command     => '/home/quake/quake_install/start_server.sh',
+        command     => 'cd /home/quake/quake_install && ./start_server.sh',
         user        => "quake",
     }
 
