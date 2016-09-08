@@ -25,16 +25,6 @@ class openarena {
         ensure => installed;
     }
     
-     file { "/etc/systemd/openarena.service":
-        source  => ["puppet:///modules/openarena/files/openarena.service"],
-        mode    => 644,
-        recurse => true,
-    }
-      file { "/home/openarena/openarena":
-        source  => ["puppet:///modules/openarena/files/server.cfg"],
-        mode    => 755,
-        recurse => true,
-    }
 
     
 }
