@@ -1,6 +1,5 @@
 class openarena {
     if $::operatingsystem != 'Ubuntu' {
-    
         notify {"please use ubuntu OS to install":}
     
     user { openarena:
