@@ -1,0 +1,27 @@
+define useradd($name, $uid, $ssh_key_name, $ssh_key) {
+
+    user { "$name":
+        home       => "/home/$name",
+        shell      => "/bin/bash",
+        uid        => $uid,
+        gid        => $uid,
+        managehome => "true",
+        groups => [],
+    }
+  
+    group { "$name":
+        gid => $uid,
+    }
+   
+    ssh_authorized_key { "$ssh_key_name":
+        user   => $name,
+        ensure => present,
+        type   => "ssh-rsa",
+        key    => $ssh_key,
+    }
+    
+}
+
+class users {
+
+

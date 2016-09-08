@@ -1,0 +1,51 @@
+#!/bin/bash
+
+out="users.part"
+
+declare -i line_idx=0;
+declare -i uid=1001;
+
+rm -rf $out;
+
+printf "Reading data from input, FORMAT: \n\
+Line 1: User name \n\
+Line 2: User Key name \n\
+Line 3: User ssh key \n\
+\n\
+example: \n\
+\n\
+eewing \n\
+eeewing@WINDOWS-10 \n\
+AAAABdkh ... 3j2 \n\
+\n\
+Repeat those three lines for each user\n";
+
+while read line
+do
+    declare -i func=$line_idx%3;
+
+    case $func in
+        0)
+            printf "useradd { \"$line\": \n\tname => \"$line\", \n\tuid => $uid,\n\t" >> $out;
+
+            uid=$uid+1;
+            ;;
+        1)
+            printf "ssh_key_name => \"$line\",\n\t" >> $out;
+
+            ;;
+        2)
+            printf "ssh_key => \"$line\"\n}\n" >> $out;
+
+            ;;
+    esac
+
+    line_idx=$line_idx+1;
+done
+
+cat header.part $out tail.part > init.pp
+
+declare -i num_users=$line_idx/3;
+
+echo "Done reading lines. init.pp created."
+echo "Configured to create $num_users users."
